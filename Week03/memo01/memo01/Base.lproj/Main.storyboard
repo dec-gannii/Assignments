@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="memo01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZM-Zt-eZY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2Sn-mT-9S9"/>
+                                    <barButtonItem title="Save" id="JzK-kT-32Z">
+                                        <connections>
+                                            <action selector="doSave:" destination="BYZ-38-t0r" id="eko-Ot-md9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ElC-fU-tl7">
+                                <rect key="frame" x="0.0" y="122" width="414" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memoCell" id="ZjD-3r-qYy" customClass="MemoCell" customModule="memo01" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="44.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZjD-3r-qYy" id="MCL-Xw-EsD">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QVw-cz-NEf">
+                                                    <rect key="frame" x="20" y="11" width="374" height="22.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QVw-cz-NEf" secondAttribute="trailing" id="Fi3-Ab-6AO"/>
+                                                <constraint firstItem="QVw-cz-NEf" firstAttribute="top" secondItem="MCL-Xw-EsD" secondAttribute="topMargin" id="atM-Rn-PdJ"/>
+                                                <constraint firstItem="QVw-cz-NEf" firstAttribute="leading" secondItem="MCL-Xw-EsD" secondAttribute="leadingMargin" id="una-e3-cn6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="QVw-cz-NEf" secondAttribute="bottom" id="yhH-Sv-scu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="memoView" destination="QVw-cz-NEf" id="e9j-Xm-rwY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0wt-jp-jM8"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zay-ud-PSA">
+                                <rect key="frame" x="10" y="88" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ElC-fU-tl7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="A0x-9i-dKE"/>
+                            <constraint firstItem="AZM-Zt-eZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Igx-ZD-2A4"/>
+                            <constraint firstItem="AZM-Zt-eZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RdU-hm-5Ew"/>
+                            <constraint firstItem="Zay-ud-PSA" firstAttribute="top" secondItem="AZM-Zt-eZY" secondAttribute="bottom" id="Y3O-9X-kKZ"/>
+                            <constraint firstItem="ElC-fU-tl7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a7j-Sq-ll8"/>
+                            <constraint firstItem="Zay-ud-PSA" firstAttribute="top" secondItem="AZM-Zt-eZY" secondAttribute="bottom" id="baa-Ri-g4s"/>
+                            <constraint firstItem="ElC-fU-tl7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eh5-N8-GSR"/>
+                            <constraint firstItem="AZM-Zt-eZY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fMN-3A-gpC"/>
+                            <constraint firstItem="Zay-ud-PSA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="gM5-sf-baX"/>
+                            <constraint firstItem="ElC-fU-tl7" firstAttribute="top" secondItem="Zay-ud-PSA" secondAttribute="bottom" id="ihK-sI-uFn"/>
+                            <constraint firstItem="ElC-fU-tl7" firstAttribute="top" secondItem="Zay-ud-PSA" secondAttribute="bottom" id="lpL-XB-4pK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zay-ud-PSA" secondAttribute="trailing" constant="10" id="nA6-TU-cbB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memoField" destination="Zay-ud-PSA" id="vHZ-8z-olC"/>
+                        <outlet property="tableView" destination="ElC-fU-tl7" id="hPF-fu-QPo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="76.339285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
